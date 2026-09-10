@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>C. Kanishka | Portfolio</title>
+
+<style>
+
+/* ================= BASIC ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+header {
+    background: #182848;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #64b5f6;
+}
+
+
+/* ================= HERO ================= */
+
+#home {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 25%,
+        rgba(255,255,255,0.9) 0 5px,
+        transparent 6px),
+
+        radial-gradient(circle at 80% 30%,
+        rgba(37,99,235,0.15),
+        transparent 200px),
+
+        linear-gradient(135deg, #dbeafe, #eef6ff);
+}
+
+/* Large background circle */
+
+#home::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    left: -180px;
+    top: -180px;
+    border-radius: 50%;
+    background: rgba(96,165,250,0.20);
+}
+
+/* Background wave */
+
+#home::after {
+    content: "";
+    position: absolute;
+    width: 900px;
+    height: 250px;
+    right: -300px;
+    bottom: -120px;
+    border-radius: 50%;
+    background: rgba(147,197,253,0.25);
+    transform: rotate(-10deg);
+}
+
+.home-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.hello {
+    color: #2563eb;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.home-content h1 {
+    font-size: 60px;
+    color: #182848;
+    margin-bottom: 10px;
+}
+
+.home-content h2 {
+    font-size: 26px;
+    color: #374151;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+
+/* Decorative dots */
+
+#home .home-content::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: -180px;
+    top: 20px;
+
+    background-image: radial-gradient(
+        #60a5fa 2px,
+        transparent 2px
+    );
+
+    background-size: 14px 14px;
+    opacity: 0.4;
+}
+
+#home .home-content::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    right: -180px;
+    bottom: 20px;
+
+    background-image: radial-gradient(
+        #60a5fa 2px,
+        transparent 2px
+    );
+
+    background-size: 14px 14px;
+    opacity: 0.4;
+}
+
+
+/* ================= COMMON SECTION ================= */
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    color: #182848;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Section decorative circles */
+
+.section::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: -100px;
+    top: 30px;
+    border-radius: 50%;
+    background: rgba(191,219,254,0.35);
+}
+
+.section::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    right: -130px;
+    bottom: -100px;
+    border-radius: 50%;
+    background: rgba(147,197,253,0.25);
+}
+
+
+/* ================= ABOUT ================= */
+
+#about {
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(96,165,250,0.12),
+            transparent 200px
+        ),
+        #f8fbff;
+}
+
+.about-box {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.08),
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+.about-box p {
+    margin-bottom: 18px;
+    color: #555;
+    font-size: 17px;
+}
+
+
+/* ================= SKILLS ================= */
+
+#skills {
+    max-width: none;
+    background:
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(147,197,253,0.30),
+            transparent 250px
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(96,165,250,0.18),
+            transparent 220px
+        ),
+        #eef4ff;
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.skill-card {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.08),
+        0 5px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+    position: relative;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 18px;
+    right: 20px;
+    border-radius: 50%;
+    background: #60a5fa;
+}
+
+.skill-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: #2563eb;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #666;
+}
+
+
+/* ================= HOBBIES ================= */
+
+#hobbies {
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(191,219,254,0.35),
+            transparent 200px
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(147,197,253,0.25),
+            transparent 220px
+        ),
+        #f8fbff;
+}
+
+.hobbies-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hobby-card {
+    width: 350px;
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.08),
+        0 5px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.hobby-card:hover {
+    transform: translateY(-8px);
+}
+
+.hobby-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hobby-card h3 {
+    color: #2563eb;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.hobby-card p {
+    color: #666;
+}
+
+
+/* ================= EDUCATION ================= */
+
+#education {
+    max-width: none;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(96,165,250,0.18),
+            transparent 220px
+        ),
+        linear-gradient(
+            135deg,
+            #eef4ff,
+            #f8fbff
+        );
+}
+
+.education-card {
+    max-width: 650px;
+    margin: auto;
+
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+
+    position: relative;
+    z-index: 2;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.08),
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+.education-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.education-card h3 {
+    color: #2563eb;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.college {
+    font-size: 21px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.education-card p {
+    color: #666;
+}
+
+
+/* ================= CONTACT ================= */
+
+#contact {
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(147,197,253,0.20),
+            transparent 220px
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(191,219,254,0.25),
+            transparent 200px
+        );
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact-text {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.contact-box {
+    max-width: 500px;
+    margin: auto;
+
+    background: white;
+    padding: 30px;
+
+    border-radius: 12px;
+
+    position: relative;
+    z-index: 2;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.08),
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-box p {
+    margin: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #182848;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.skill-card:hover,
+.hobby-card:hover {
+    animation: floating 2s ease-in-out infinite;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 750px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .home-content h1 {
+        font-size: 42px;
+    }
+
+    .home-content h2 {
+        font-size: 21px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    #home .home-content::before,
+    #home .home-content::after {
+        display: none;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .home-content h1 {
+        font-size: 35px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 60px 18px;
+    }
+
+    .about-box,
+    .skill-card,
+    .hobby-card,
+    .education-card,
+    .contact-box {
+        padding: 25px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+<nav>
+
+<div class="logo">
+C. Kanishka
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#hobbies">Hobbies</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home">
+
+<div class="home-content">
+
+<p class="hello">
+Hello, I'm
+</p>
+
+<h1>
+C. Kanishka
+</h1>
+
+<h2>
+First-Year Computer Science Student
+</h2>
+
+<p>
+Welcome to my personal portfolio website.
+I am a first-year Computer Science student
+at Mount Zion.
+</p>
+
+<a href="#about" class="button">
+Know More
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<div class="about-box">
+
+<p>
+My name is <strong>C. Kanishka</strong>.
+I am a first-year student in the
+<strong>Computer Science</strong> department
+at <strong>Mount Zion</strong>.
+</p>
+
+<p>
+I am interested in learning computer-related
+skills and improving my knowledge step by step.
+I enjoy learning new things and developing my
+abilities as a Computer Science student.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="section">
+
+<h2 class="section-title">
+My Skills
+</h2>
+
+<div class="skills-container">
+
+<div class="skill-card">
+
+<div class="skill-icon">
+⌨️
+</div>
+
+<h3>
+Typewriting
+</h3>
+
+<p>
+Good typing and document preparation skills.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-icon">
+💻
+</div>
+
+<h3>
+Computer Skills
+</h3>
+
+<p>
+Basic knowledge of computers and
+common computer applications.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= HOBBIES ================= -->
+
+<section id="hobbies" class="section">
+
+<h2 class="section-title">
+My Hobbies
+</h2>
+
+<div class="hobbies-container">
+
+<div class="hobby-card">
+
+<div class="hobby-icon">
+💃
+</div>
+
+<h3>
+Dancing
+</h3>
+
+<p>
+I enjoy dancing in my free time.
+It is one of my favorite activities.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education" class="section">
+
+<h2 class="section-title">
+Education
+</h2>
+
+<div class="education-card">
+
+<div class="education-icon">
+🎓
+</div>
+
+<h3>
+Computer Science
+</h3>
+
+<p class="college">
+Mount Zion
+</p>
+
+<p>
+<strong>Year:</strong> First Year
+</p>
+
+<p>
+<strong>Department:</strong> Computer Science
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="section contact">
+
+<h2 class="section-title">
+Contact Me
+</h2>
+
+<p class="contact-text">
+Thank you for visiting my portfolio!
+</p>
+
+<div class="contact-box">
+
+<p>
+<strong>Name:</strong> C. Kanishka
+</p>
+
+<p>
+<strong>College:</strong> Mount Zion
+</p>
+
+<p>
+<strong>Department:</strong> Computer Science
+</p>
+
+<p>
+<strong>Year:</strong> First Year
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 C. Kanishka | Personal Portfolio
+</p>
+
+</footer>
+
+</body>
+</html>

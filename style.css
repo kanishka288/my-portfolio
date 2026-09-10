@@ -1,0 +1,336 @@
+/* =========================================================
+   BACKGROUND EFFECTS
+   Add this CSS inside your existing <style> section
+   ========================================================= */
+
+/* Smooth page background */
+body {
+    background: #f5f7fb;
+    color: #222;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animated background glow */
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: -180px;
+    left: -180px;
+    background: radial-gradient(
+        circle,
+        rgba(37, 99, 235, 0.16),
+        transparent 70%
+    );
+    border-radius: 50%;
+    z-index: -2;
+    animation: floatGlow 8s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 550px;
+    height: 550px;
+    right: -220px;
+    bottom: -200px;
+    background: radial-gradient(
+        circle,
+        rgba(100, 181, 246, 0.18),
+        transparent 70%
+    );
+    border-radius: 50%;
+    z-index: -2;
+    animation: floatGlow 10s ease-in-out infinite alternate-reverse;
+}
+
+/* Hero background */
+#home {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 25%,
+            rgba(255,255,255,0.9) 0 5px,
+            transparent 6px),
+        radial-gradient(circle at 80% 30%,
+            rgba(37,99,235,0.12),
+            transparent 180px),
+        linear-gradient(135deg, #dbeafe, #eef6ff);
+}
+
+/* Large soft circle */
+#home::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    left: -170px;
+    top: -170px;
+    border-radius: 50%;
+    background: rgba(147, 197, 253, 0.28);
+    filter: blur(2px);
+}
+
+/* Hero wave */
+#home::after {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 220px;
+    right: -250px;
+    bottom: -100px;
+    border-radius: 50%;
+    background: rgba(147, 197, 253, 0.25);
+    transform: rotate(-12deg);
+}
+
+/* Keep hero content above effects */
+.home-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================================
+   SECTION BACKGROUND EFFECTS
+   ========================================================= */
+
+.section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft floating circles */
+.section::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: -90px;
+    top: 30px;
+    border-radius: 50%;
+    background: rgba(191, 219, 254, 0.25);
+    filter: blur(2px);
+    z-index: 0;
+}
+
+.section::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    right: -120px;
+    bottom: -100px;
+    border-radius: 50%;
+    background: rgba(147, 197, 253, 0.20);
+    z-index: 0;
+}
+
+/* Keep actual content above effects */
+.section > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================================
+   SKILLS BACKGROUND
+   ========================================================= */
+
+#skills {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(147, 197, 253, 0.25),
+            transparent 220px
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(96, 165, 250, 0.18),
+            transparent 200px
+        ),
+        #eef4ff;
+}
+
+/* Decorative curved wave */
+#skills::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 180px;
+    left: -10%;
+    bottom: -110px;
+    background: rgba(255,255,255,0.45);
+    border-radius: 50%;
+    transform: rotate(-5deg);
+}
+
+/* =========================================================
+   HOBBIES BACKGROUND
+   ========================================================= */
+
+#hobbies {
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(191, 219, 254, 0.35),
+            transparent 180px
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(147, 197, 253, 0.25),
+            transparent 200px
+        ),
+        #f8fbff;
+}
+
+/* =========================================================
+   EDUCATION BACKGROUND
+   ========================================================= */
+
+#education {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(96, 165, 250, 0.18),
+            transparent 220px
+        ),
+        linear-gradient(
+            135deg,
+            #eef4ff,
+            #f8fbff
+        );
+}
+
+/* =========================================================
+   CONTACT BACKGROUND
+   ========================================================= */
+
+#contact {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(147, 197, 253, 0.18),
+            transparent 200px
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(191, 219, 254, 0.25),
+            transparent 180px
+        );
+}
+
+/* =========================================================
+   CARD EFFECT
+   ========================================================= */
+
+.about-box,
+.skill-card,
+.hobby-card,
+.education-card,
+.contact-box {
+    position: relative;
+    z-index: 3;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.08),
+        0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================================
+   FLOATING DOTS
+   ========================================================= */
+
+.skill-card::before,
+.hobby-card::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 18px;
+    right: 20px;
+    border-radius: 50%;
+    background: #93c5fd;
+    opacity: 0.6;
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes floatGlow {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(30px, 25px) scale(1.08);
+    }
+}
+
+/* =========================================================
+   REMOVE BOY PROFILE / PROFILE IMAGE
+   ========================================================= */
+
+/* If your HTML contains any profile image */
+.profile-image,
+.profile-photo,
+.profile-picture,
+.hero-image,
+.home-image,
+.home-photo,
+.profile {
+    display: none !important;
+}
+
+/* Keep hero centered after removing profile */
+#home {
+    justify-content: center;
+}
+
+.home-content {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+/* =========================================================
+   OPTIONAL: DECORATIVE DOT GRID
+   ========================================================= */
+
+#home .home-content::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: -150px;
+    top: 20px;
+    background-image: radial-gradient(
+        #60a5fa 2px,
+        transparent 2px
+    );
+    background-size: 14px 14px;
+    opacity: 0.35;
+}
+
+#home .home-content::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    right: -150px;
+    bottom: 20px;
+    background-image: radial-gradient(
+        #60a5fa 2px,
+        transparent 2px
+    );
+    background-size: 14px 14px;
+    opacity: 0.35;
+}
