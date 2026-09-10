@@ -1,9 +1,4 @@
-/* =========================================================
-   BACKGROUND EFFECTS
-   Add this CSS inside your existing <style> section
-   ========================================================= */
 
-/* Smooth page background */
 body {
     background: #f5f7fb;
     color: #222;
@@ -11,7 +6,6 @@ body {
     position: relative;
 }
 
-/* Animated background glow */
 body::before {
     content: "";
     position: fixed;
@@ -45,8 +39,6 @@ body::after {
     z-index: -2;
     animation: floatGlow 10s ease-in-out infinite alternate-reverse;
 }
-
-/* Hero background */
 #home {
     position: relative;
     overflow: hidden;
@@ -60,7 +52,6 @@ body::after {
         linear-gradient(135deg, #dbeafe, #eef6ff);
 }
 
-/* Large soft circle */
 #home::before {
     content: "";
     position: absolute;
@@ -73,7 +64,7 @@ body::after {
     filter: blur(2px);
 }
 
-/* Hero wave */
+
 #home::after {
     content: "";
     position: absolute;
@@ -92,16 +83,11 @@ body::after {
     z-index: 2;
 }
 
-/* =========================================================
-   SECTION BACKGROUND EFFECTS
-   ========================================================= */
-
 .section {
     position: relative;
     overflow: hidden;
 }
 
-/* Soft floating circles */
 .section::before {
     content: "";
     position: absolute;
@@ -126,16 +112,10 @@ body::after {
     background: rgba(147, 197, 253, 0.20);
     z-index: 0;
 }
-
-/* Keep actual content above effects */
 .section > * {
     position: relative;
     z-index: 2;
 }
-
-/* =========================================================
-   SKILLS BACKGROUND
-   ========================================================= */
 
 #skills {
     position: relative;
@@ -154,7 +134,6 @@ body::after {
         #eef4ff;
 }
 
-/* Decorative curved wave */
 #skills::before {
     content: "";
     position: absolute;
@@ -166,10 +145,6 @@ body::after {
     border-radius: 50%;
     transform: rotate(-5deg);
 }
-
-/* =========================================================
-   HOBBIES BACKGROUND
-   ========================================================= */
 
 #hobbies {
     background:
@@ -185,10 +160,6 @@ body::after {
         ),
         #f8fbff;
 }
-
-/* =========================================================
-   EDUCATION BACKGROUND
-   ========================================================= */
 
 #education {
     position: relative;
@@ -206,10 +177,6 @@ body::after {
         );
 }
 
-/* =========================================================
-   CONTACT BACKGROUND
-   ========================================================= */
-
 #contact {
     position: relative;
     overflow: hidden;
@@ -226,9 +193,6 @@ body::after {
         );
 }
 
-/* =========================================================
-   CARD EFFECT
-   ========================================================= */
 
 .about-box,
 .skill-card,
@@ -244,9 +208,6 @@ body::after {
         0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* =========================================================
-   FLOATING DOTS
-   ========================================================= */
 
 .skill-card::before,
 .hobby-card::before {
@@ -261,9 +222,6 @@ body::after {
     opacity: 0.6;
 }
 
-/* =========================================================
-   ANIMATION
-   ========================================================= */
 
 @keyframes floatGlow {
     from {
@@ -275,11 +233,6 @@ body::after {
     }
 }
 
-/* =========================================================
-   REMOVE BOY PROFILE / PROFILE IMAGE
-   ========================================================= */
-
-/* If your HTML contains any profile image */
 .profile-image,
 .profile-photo,
 .profile-picture,
@@ -290,7 +243,6 @@ body::after {
     display: none !important;
 }
 
-/* Keep hero centered after removing profile */
 #home {
     justify-content: center;
 }
@@ -300,10 +252,6 @@ body::after {
     margin: auto;
     text-align: center;
 }
-
-/* =========================================================
-   OPTIONAL: DECORATIVE DOT GRID
-   ========================================================= */
 
 #home .home-content::before {
     content: "";
